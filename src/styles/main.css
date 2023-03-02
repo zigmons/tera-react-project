@@ -18,6 +18,7 @@ body {
   color: #000;
   overflow-x: hidden;
 }
+
 #root {
   height: 100%;
 }
@@ -215,6 +216,6 @@ label {
   height: 200px;
 }
 
-.MuiDrawer-paper{
-  padding: 20px 100px;
+.MuiDrawer-paper {
+  padding: 20px 40px;
 }

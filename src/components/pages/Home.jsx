@@ -21,6 +21,7 @@ export default function Home() {
   }, []);
 
   const handleUserChange = (e) => setCurrentUser(e.target.value);
+
   const handleConfirmClick = () => navigate(`/users/${currentUser}`);
 
   return isLoading ? (
@@ -31,7 +32,7 @@ export default function Home() {
         <img src={logo} className="responsive" alt="" />
       </div>
       <select onChange={handleUserChange} className="home__select-users">
-        <option value=""> Selecionar Usuário</option>
+        <option value="">Selecionar usuário</option>
         {users
           .sort((a, b) => a.fn.localeCompare(b.fn))
           .map((user) => (
