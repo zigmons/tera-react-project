@@ -19,8 +19,8 @@ export default function UserPostForm() {
     }).then(() => {
       setTitle("");
       setContent("");
+      setIsLoading(false);
     });
-    setIsLoading(false);
   };
 
   return isLoading ? (
