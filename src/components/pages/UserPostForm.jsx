@@ -12,12 +12,6 @@ export default function UserPostForm() {
   const [content, setContent] = React.useState("");
   const [isLoading, setIsLoading] = React.useState(false);
 
-  React.useEffect(() => {
-    fetch("https://63cf09718a780ae6e6710dbe.mockapi.io/users").then(
-      console.log("ok")
-    );
-  }, []);
-
   const handleFormSubmit = (event) => {
     event.preventDefault();
     setIsLoading(true);
