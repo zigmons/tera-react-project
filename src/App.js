@@ -1,16 +1,22 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React from "react"
 
 import Home from "./components/pages/Home";
 import UserBlog from "./components/pages/UserBlog";
 import Users from "./components/pages/Users";
 import UserPostForm from "./components/pages/UserPostForm";
 
+import { CurrentUserContext } from "./context/CurrentUserContext";
+
 import "./styles/normalize.css";
 import "./styles/fontawesome.min.css";
 import "./styles/main.css";
 
 function App() {
+  const [currentUser, setCurrentUser] = React.useState("");
+
   return (
+    <CurrentUserContext.Provider value={{currentUser, setCurrentUser}}>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -20,6 +26,7 @@ function App() {
         <Route path="*" element={<div>Not found</div>} />
       </Routes>
     </BrowserRouter>
+    </CurrentUserContext.Provider>
   );
 }
 
